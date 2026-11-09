@@ -1,21 +1,38 @@
-
-public class Stack<E> implements Stack_Iter {
-    public Stack() {
-        // Constructor implementation
+//Implement support for all data types (instanceof)
+import java.util.*;
+public class Stack<E> extends ArrayList<E> implements Stack_Iter<E> {
+    /**
+    * Calls ArrayList constructor to construct an empty ArrayList to hold the Stack like how it is done in the default Java Stack.
+    */
+    protected Stack() {
+        super();
     }
     @Override
-    public void push(Object node) {
-        // Push implementation
+    public void push(E element) {
+        this.add(element);
     }
     @Override 
-    public int pop() {
-        // Pop implementation
-        return 0; // Placeholder return value
+    public E pop() {
+        if (this.isEmpty()) return null;
+        E x = this.get(this.size() - 1);
+        this.remove(this.size()-1);
+        return x;
     }
+    
     @Override 
-    public int top() {
-        // Top implementation
-        return 0; // Placeholder return value
+    public E top() {
+        if (isEmpty()) return null;
+        return this.get(this.size()-1);
     }
-
+    @Override
+    public boolean isEmpty() {
+        /**
+         * I used ArrayLists's isEmpty() method.
+         */
+        return super.isEmpty();
+    }
+    @Override
+    public int getSize() {
+        return this.size(); 
+    }
 }
