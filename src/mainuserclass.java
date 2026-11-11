@@ -41,7 +41,12 @@ public class mainuserclass {
             }
         }
     }
-
+    /**
+     * 
+     * @param <E>
+     * @param sc
+     * @param stack
+     */
     protected static <E> void stackUser(Scanner sc, Stack<E> stack){
         while (true) { 
             System.out.println("Choose an action.");

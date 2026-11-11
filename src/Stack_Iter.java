@@ -4,10 +4,8 @@
  * Stack_Iter
  * @param <E>
  */
-public interface Stack_Iter<E> extends Iterable<E>{
+public interface Stack_Iter<E> extends Traversable_Iter<E>{
     void push(E element); 
     E pop();
     E top();
-    boolean isEmpty();
-    int getSize();
 }

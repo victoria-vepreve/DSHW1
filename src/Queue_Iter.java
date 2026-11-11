@@ -4,10 +4,8 @@
  * Queue_Iter
  * @param <E>
  */
-public interface Queue_Iter<E> extends Iterable<E>{
+public interface Queue_Iter<E> extends Traversable_Iter<E>{
     void enqueue(E element);
     E dequeue();
     E peek();
-    boolean isEmpty();
-    int getSize();
 }
