@@ -13,13 +13,14 @@ public class mainuserclass {
          */
         Stack<Object> stack = new Stack<>();
         Queue<Object> queue = new Queue<>();
-        Deque<Object> dequeue = new Deque<>();
+        Deque<Object> deque = new Deque<>();
         while (true){
             System.out.println("Choose a data structure or to stop.");
             System.out.println("1) Stack");
             System.out.println("2) Queue");
             System.out.println("3) Deque");
-            System.out.println("4) Stop");
+            System.out.println("4) Quit");
+            System.out.println("5) Automatic Demonstration");
 
             String user = sc.nextLine();
 
@@ -30,16 +31,65 @@ public class mainuserclass {
                 queueUser(sc, queue);
             }
             else if (user.equals("3")){
-                dequeUser(sc, dequeue);
+                dequeUser(sc, deque);
             }
             else if (user.equals("4")){
-                System.out.println("Stopped.");
+                System.out.println("Quit.");
                 break;
+            }
+            else if (user.equals("5")){
+                test(stack,queue,deque);
             }
             else{
                 System.out.println("Invalid input.");
             }
         }
+    }
+
+    protected static void test(Stack<Object> stack, Queue<Object> queue, Deque<Object> deque){
+        System.out.println("Auto Test In Progress:");
+
+        System.out.println("Stack Populating");
+        stack.push("Stack E1");
+        stack.push("Stack E2");
+        stack.push("Stack E3");
+        System.out.println("Stack size: " + stack.getSize());
+
+        System.out.println("Queue Populating");
+        queue.enqueue("Queue E1");
+        queue.enqueue("Queue E2");
+        queue.enqueue("Queue E3");
+        System.out.println("Queue size: " + queue.getSize());
+
+        System.out.println("Deque Populating");
+        deque.push_back("Deque EMiddle");
+        deque.push_front("Deque EFront");
+        deque.push_back("Deque EBack");
+        System.out.println("Deque size: " + deque.getSize());
+
+        System.out.println("Stack Depopulating");
+        while (!stack.isEmpty()){
+            System.out.println("Popped: " + stack .pop());
+        }
+
+        System.out.println("Queue Depopulating");
+        while (!queue.isEmpty()){
+            System.out.println("Dequeued: " + queue.dequeue());
+        }
+
+        System.out.println("Deque Depopulating");
+        while (!deque.isEmpty()){
+            if (deque.getSize() % 2 == 0){
+                System.out.println("Front Popped: " + deque.pop_front());
+            }
+            else{
+                System.out.println("Back Popped: " + deque.pop_back());
+            }
+        }
+
+        System.out.println("All structures have been populated and depopulated.");
+
+
     }
     /**
      * 
@@ -54,8 +104,9 @@ public class mainuserclass {
             System.out.println("2) Pop");
             System.out.println("3) Top");
             System.out.println("4) Print");
-            System.out.println("5) Check Size");
-            System.out.println("6) Stop");
+            System.out.println("5) Alter Element");
+            System.out.println("6) Check Size");
+            System.out.println("7) Stop");
 
             String user = sc.nextLine();
 
@@ -72,9 +123,14 @@ public class mainuserclass {
             }
             else if (user.equals("4")){
                 System.out.println("Elements Of Stack:");
-                for (E element: stack){
-                    System.out.println(element);
-                }
+                stack.printEls();
+            }
+            else if (user.equals("5")){
+                System.out.println("Which value would you like to change?");
+                E oldVal = (E) sc.nextLine();
+                System.out.println("Enter what you want the replacement to be.");
+                E newVal = (E) sc.nextLine();
+                stack.alterEl(oldVal, newVal);
             }
             else if (user.equals("5")){
                 System.out.println(stack.getSize());
@@ -95,8 +151,9 @@ public class mainuserclass {
             System.out.println("2) Dequeue");
             System.out.println("3) Peek");
             System.out.println("4) Print");
-            System.out.println("5) Check Size");
-            System.out.println("6) Stop");
+            System.out.println("5) Alter Element");
+            System.out.println("6) Check Size");
+            System.out.println("7) Stop");
 
             String user = sc.nextLine();
 
@@ -113,14 +170,19 @@ public class mainuserclass {
             }
             else if (user.equals("4")){
                 System.out.println("Elements Of Stack:");
-                for (E element: queue){
-                    System.out.println(element);
-                }
+                queue.printEls();
             }
             else if (user.equals("5")){
-                System.out.println(queue.getSize());
+                System.out.println("Which value would you like to change?");
+                E oldVal = (E) sc.nextLine();
+                System.out.println("Enter what you want the replacement to be.");
+                E newVal = (E) sc.nextLine();
+                queue.alterEl(oldVal, newVal);
             }
             else if (user.equals("6")){
+                System.out.println(queue.getSize());
+            }
+            else if (user.equals("7")){
                 System.out.println("Stopped.");
                 break;
             }
@@ -138,8 +200,9 @@ public class mainuserclass {
             System.out.println("3) Pop Front");
             System.out.println("4) Pop Back");
             System.out.println("5) Print");
-            System.out.println("6) Check Size");
-            System.out.println("7) Stop");
+            System.out.println("6) Alter Element");
+            System.out.println("7) Check Size");
+            System.out.println("8) Stop");
 
             String user = sc.nextLine();
 
@@ -161,14 +224,19 @@ public class mainuserclass {
             }
             else if (user.equals("5")){
                 System.out.println("Elements Of Stack:");
-                for (E element: deque){
-                    System.out.println(element);
-                }
+                deque.printEls();
             }
             else if (user.equals("6")){
-                System.out.println(deque.getSize());
+                System.out.println("Which value would you like to change?");
+                E oldVal = (E) sc.nextLine();
+                System.out.println("Enter what you want the replacement to be.");
+                E newVal = (E) sc.nextLine();
+                deque.alterEl(oldVal, newVal);
             }
             else if (user.equals("7")){
+                System.out.println(deque.getSize());
+            }
+            else if (user.equals("8")){
                 System.out.println("Stopped.");
                 break;
             }

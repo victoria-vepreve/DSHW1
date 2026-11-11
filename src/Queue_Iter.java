@@ -1,6 +1,5 @@
 /**
- * Since methods in an interface are public and abstract by default, I do not explicitly declare them as being such.
- * I extend Iterable in order to traverse through my data utilizing already written code.
+ * Interface that defines the Queue data structures. I extended 
  * Queue_Iter
  * @param <E>
  */
