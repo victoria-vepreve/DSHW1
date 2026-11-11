@@ -1,16 +1,19 @@
 import java.util.*;
 
+/**
+ * Main app class. Contains all methods for the user to interact with the Stack, Queue, and Deque classes.
+ * Nested while loops with if-else statements allow the user to interact with the program.
+ * mainuserclass
+ */
 public class mainuserclass {
     /**
      * Main way for the user to interact with the program. Allows the user to use the Stack, Queue, and Deque data structures.
+     * Data structures are initialized with the Object type in order to accept any object.
      * @param args
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        /**
-         * I used instances of Object so each can accept the same data structure type.
-         */
         Stack<Object> stack = new Stack<>();
         Queue<Object> queue = new Queue<>();
         Deque<Object> deque = new Deque<>();
@@ -46,6 +49,14 @@ public class mainuserclass {
         }
     }
 
+    /**
+     * Automatically populates and depopulates all data structures in order to show that the program works.
+     * Separated into its own method in order to only run when prompted by the user.
+     * 
+     * @param stack the instance of Stack being tested
+     * @param queue the instance of Queue being tested
+     * @param deque the instance of Deque being tested
+     */
     protected static void test(Stack<Object> stack, Queue<Object> queue, Deque<Object> deque){
         System.out.println("Auto Test In Progress:");
 
@@ -79,6 +90,9 @@ public class mainuserclass {
 
         System.out.println("Deque Depopulating");
         while (!deque.isEmpty()){
+            /**
+             * Both pops are utilized in order to showcase them working.
+             */
             if (deque.getSize() % 2 == 0){
                 System.out.println("Front Popped: " + deque.pop_front());
             }
@@ -92,10 +106,11 @@ public class mainuserclass {
 
     }
     /**
-     * 
-     * @param <E>
-     * @param sc
-     * @param stack
+     * User interaction with Stack.
+     * Allows for operations such as push, pop, top, print, alter element, and check size.
+     * @param <E> the generic type
+     * @param sc the Scanner for user input
+     * @param stack the Stack instance being modified
      */
     protected static <E> void stackUser(Scanner sc, Stack<E> stack){
         while (true) { 
@@ -144,6 +159,14 @@ public class mainuserclass {
             }
         }
     }
+
+    /**
+     * User interaction with Queue.
+     * Allows for operations such as enqueue, dequeue, peek, print, alter, and check size
+     * @param <E> generic type
+     * @param sc the Scanner for user input
+     * @param queue the Queue instance being modified
+     */
     protected  static <E> void queueUser(Scanner sc, Queue<E> queue){
         while (true) { 
             System.out.println("Choose an action.");
@@ -192,6 +215,13 @@ public class mainuserclass {
         }
 
     }
+    /**
+     * User interaction with Deque.
+     * Allows for operations such as push front/back, pop front/back, print, alter, and check size
+     * @param <E> generic type
+     * @param sc the Scanner for user input
+     * @param deque the Deque instance being modified
+     */
     protected  static <E> void dequeUser(Scanner sc, Deque<E> deque){
         while (true) { 
             System.out.println("Choose an action.");

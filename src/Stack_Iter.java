@@ -1,6 +1,6 @@
 /**
  * 
- * Interface that defines the Stack data structure. I inherited Traversable_Iter to inherit its methods to traverse and modify.
+ * Interface that defines the Stack data structure. I extended Traversable_Iter to inherit its methods to traverse and modify.
  * Stack_Iter
  * @param <E> generic type
  */

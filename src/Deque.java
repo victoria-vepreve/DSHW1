@@ -1,19 +1,33 @@
+/**
+ * Implementation of a generic Deque that implements Deque_Iter and extends ArrayList
+ * Inheriting from ArrayList allows me to use ArrayList's methods without having to write them myself.
+ */
 import java.util.*;
 public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
+    /**
+     * Implementation of a generic Queue that implements Queue_Iter and extends ArrayList
+     * Inheriting from ArrayList allows me to use ArrayList's methods without having to write them myself.
+     */
     protected Deque() {
         super();
     }
-
+    /**    (non-Javadoc)
+     * @see Deque_Iter#push_front(java.lang.Object)
+     */
     @Override
     public void push_front(E element) {
         this.add(0, element);
     }
-
+    /**    (non-Javadoc)
+     * @see Deque_Iter#push_back(java.lang.Object)
+     */
     @Override
     public void push_back(E element) {
         this.add(element);
     }
-
+    /**    (non-Javadoc)
+     * @see Deque_Iter#pop_front()
+     */
     @Override
     public E pop_front() {
         if (isEmpty()) return null;
@@ -21,7 +35,9 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
         this.remove(0);
         return x;
     }
-
+    /**    (non-Javadoc)
+     * @see Deque_Iter#pop_back()
+     */
     @Override
     public E pop_back() {
         if (isEmpty()) return null;
@@ -29,6 +45,9 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
         this.remove(this.size()-1);
         return x;
     }
+    /**    (non-Javadoc)
+     * @see java.util.ArrayList#isEmpty()
+     */
     @Override
     public boolean isEmpty() {
         /**
@@ -36,10 +55,16 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
          */
         return super.isEmpty();
     }
+    /**    (non-Javadoc)
+     * @see Traversable_Iter#getSize()
+     */
     @Override
     public int getSize() {
         return this.size(); 
     }
+    /**    (non-Javadoc)
+     * @see Traversable_Iter#alterEl(java.lang.Object, java.lang.Object)
+     */
     @Override 
     public void alterEl(E oldVal, E newVal){
         ListIterator<E> iterator = this.listIterator();
@@ -50,6 +75,9 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
             }
         }
     }
+    /**    (non-Javadoc)
+     * @see Traversable_Iter#printEls()
+     */
     @Override 
     public void printEls(){
         for (Object element: this){
