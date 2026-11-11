@@ -15,6 +15,7 @@ public interface Deque_Iter<E> extends Traversable_Iter<E>{
     void push_back(E element);
     /** 
      * Removies and returns the element at the front of the deque
+     * @return the removed element if there is an element present, or null if it is empty
     */
     E pop_front();
     /**

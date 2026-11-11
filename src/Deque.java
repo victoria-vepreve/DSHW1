@@ -6,27 +6,33 @@ import java.util.*;
 
 public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
     /**
-     * Implementation of a generic Deque that implements Deque_Iter and extends ArrayList
-     * Inheriting from ArrayList allows me to use ArrayList's methods without having to write them myself.
+     * Calls ArrayList constructor to construct an empty ArrayList to hold the Deque
+     *      
      */
     protected Deque() {
         super();
     }
-    /**    (non-Javadoc)
+    /**
+     * Adds an element to the front of the deque
+     * @param element the element that will be added
      * @see Deque_Iter#push_front(java.lang.Object)
      */
     @Override
     public void push_front(E element) {
         this.add(0, element);
     }
-    /**    (non-Javadoc)
+    /** 
+     * Adds an element tothe back of the deeue
+     * @param element the element that will be added
      * @see Deque_Iter#push_back(java.lang.Object)
      */
     @Override
     public void push_back(E element) {
         this.add(element);
     }
-    /**    (non-Javadoc)
+    /**    
+     * Removes and returns the element at the front of the deque
+     * @return the removed element if there is an element present, or null if it is empty
      * @see Deque_Iter#pop_front()
      */
     @Override
@@ -36,7 +42,9 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
         this.remove(0);
         return x;
     }
-    /**    (non-Javadoc)
+    /** 
+     * Removes and returns the element at the back of the deque
+     * @return the removed element if there is an element present, or null if the deque is empty
      * @see Deque_Iter#pop_back()
      */
     @Override
@@ -46,7 +54,7 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
         this.remove(this.size()-1);
         return x;
     }
-    /**    (non-Javadoc)
+    /**  
      * Checks if the data structure is empty.
      * @return true if it is empty, false if it is not.
      * @see java.util.ArrayList#isEmpty()
@@ -58,7 +66,7 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
          */
         return super.isEmpty();
     }
-    /**    (non-Javadoc)
+    /**   
      * Returns the number of elements in the data structure at the moment that it is called.
      * @return size of the data structure
      * @see Traversable_Iter#getSize()
@@ -67,10 +75,10 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
     public int getSize() {
         return this.size(); 
     }
-    /**    (non-Javadoc)
+    /**    
      * Iterates through the data structure and replaces a value any time it is found
-     * @param oldValue value to be replaces
-     * @param newValue value to replace oldValue with
+     * @param oldVal value to be replaces
+     * @param newVal value to replace oldVal with
      * @see Traversable_Iter#alterEl(java.lang.Object, java.lang.Object)
      */
     @Override 
@@ -83,7 +91,7 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
             }
         }
     }
-    /**    (non-Javadoc)
+    /**    
      * Prints all elements in the data structure
      * @see Traversable_Iter#printEls()
      */

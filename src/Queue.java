@@ -11,7 +11,7 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
     protected Queue() {
         super();
     }
-    /**    (non-Javadoc)
+    /**   
      * Adds an element to the back of the queue
      * @param element element that will be added to the queue
      * @see Queue_Iter#enqueue(java.lang.Object)
@@ -20,7 +20,7 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
     public void enqueue(E element) {
         this.add(element);
     }
-    /**    (non-Javadoc)
+    /**   
      * Removes and returns the element at the front of the queue
      * @return the removed element if it is present, or null if the queue is empty
      * @see Queue_Iter#dequeue()
@@ -32,7 +32,7 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
         this.remove(0);
         return x;
     }
-    /**    (non-Javadoc)
+    /**    
      * Retrieves the element at the front of the queue without removing it
      * @return the front element if it is present, or null if the queue is empty
      * @see Queue_Iter#peek()
@@ -42,7 +42,7 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
         if (isEmpty()) return null;
         return this.get(0);
     }
-    /**    (non-Javadoc)
+    /** 
      * Checks if the data structure is empty.
      * @return true if it is empty, false if it is not.
      * @see java.util.ArrayList#isEmpty()
@@ -54,7 +54,7 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
          */
         return super.isEmpty();
     }
-    /**    (non-Javadoc)
+    /**  
      * Returns the number of elements in the data structure at the moment that it is called.
      * @return size of the data structure
      * @see Traversable_Iter#getSize()
@@ -63,10 +63,10 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
     public int getSize() {
         return this.size(); 
     }
-    /**    (non-Javadoc)
+    /**  
      * Iterates through the data structure and replaces a value any time it is found
-     * @param oldValue value to be replaces
-     * @param newValue value to replace oldValue with
+     * @param oldVal value to be replaces
+     * @param newVal value to replace oldVal with
      * @see Traversable_Iter#alterEl(java.lang.Object, java.lang.Object)
      */
     @Override 
@@ -79,7 +79,7 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
             }
         }
     }
-    /**    (non-Javadoc)
+    /**   
      * Prints all elements in the data structure
      * @see Traversable_Iter#printEls()
      */
