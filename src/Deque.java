@@ -2,7 +2,8 @@ import java.util.*;
 /**
  * Implementation of a generic Deque that implements Deque_Iter and extends ArrayList
  * Inheriting from ArrayList allows me to use ArrayList's methods without having to write them myself.
- */
+ * @param <E> generic type
+*/
 
 public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
     /**

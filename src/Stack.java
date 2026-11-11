@@ -2,7 +2,8 @@ import java.util.*;
 /**
  * Implementation of a generic Stack that implements Stack_Iter and extends ArrayList
  * Inheriting from ArrayList allows me to use ArrayList's methods without having to write them myself
- */
+ * @param <E> generic type 
+*/
 
 public class Stack<E> extends ArrayList<E> implements Stack_Iter<E> {
     /**
