@@ -65,18 +65,21 @@ public class mainuserclass {
         stack.push("Stack E2");
         stack.push("Stack E3");
         System.out.println("Stack size: " + stack.getSize());
+        System.out.println("Is Stack Empty: " + stack.isEmpty());
 
         System.out.println("Queue Populating");
         queue.enqueue("Queue E1");
         queue.enqueue("Queue E2");
         queue.enqueue("Queue E3");
         System.out.println("Queue size: " + queue.getSize());
+        System.out.println("Is Queue Empty: " + queue.isEmpty());
 
         System.out.println("Deque Populating");
         deque.push_back("Deque EMiddle");
         deque.push_front("Deque EFront");
         deque.push_back("Deque EBack");
         System.out.println("Deque size: " + deque.getSize());
+        System.out.println("Is Deque Empty: " + deque.isEmpty());
 
         System.out.println("Stack Depopulating");
         while (!stack.isEmpty()){
@@ -147,10 +150,10 @@ public class mainuserclass {
                 E newVal = (E) sc.nextLine();
                 stack.alterEl(oldVal, newVal);
             }
-            else if (user.equals("5")){
+            else if (user.equals("6")){
                 System.out.println(stack.getSize());
             }
-            else if (user.equals("6")){
+            else if (user.equals("7")){
                 System.out.println("Stopped.");
                 break;
             }
@@ -192,7 +195,7 @@ public class mainuserclass {
                 System.out.println("Peek:" + queue.peek());
             }
             else if (user.equals("4")){
-                System.out.println("Elements Of Stack:");
+                System.out.println("Elements Of Queue:");
                 queue.printEls();
             }
             else if (user.equals("5")){
@@ -253,7 +256,7 @@ public class mainuserclass {
                 System.out.println("Back popped.");
             }
             else if (user.equals("5")){
-                System.out.println("Elements Of Stack:");
+                System.out.println("Elements Of Deque:");
                 deque.printEls();
             }
             else if (user.equals("6")){

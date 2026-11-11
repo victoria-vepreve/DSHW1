@@ -1,8 +1,9 @@
+import java.util.*;
 /**
  * Implementation of a generic Queue that implements Queue_Iter and extends ArrayList
  * Inheriting from ArrayList allows me to use ArrayList's methods without having to write them myself.
  */
-import java.util.*;
+
 public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
     /**
      * Calls ArrayList constructor to construct an empty ArrayList to hold the Queue.
@@ -11,6 +12,8 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
         super();
     }
     /**    (non-Javadoc)
+     * Adds an element to the back of the queue
+     * @param element element that will be added to the queue
      * @see Queue_Iter#enqueue(java.lang.Object)
      */
     @Override 
@@ -18,6 +21,8 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
         this.add(element);
     }
     /**    (non-Javadoc)
+     * Removes and returns the element at the front of the queue
+     * @return the removed element if it is present, or null if the queue is empty
      * @see Queue_Iter#dequeue()
      */
     @Override 
@@ -28,6 +33,8 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
         return x;
     }
     /**    (non-Javadoc)
+     * Retrieves the element at the front of the queue without removing it
+     * @return the front element if it is present, or null if the queue is empty
      * @see Queue_Iter#peek()
      */
     @Override 
@@ -36,6 +43,8 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
         return this.get(0);
     }
     /**    (non-Javadoc)
+     * Checks if the data structure is empty.
+     * @return true if it is empty, false if it is not.
      * @see java.util.ArrayList#isEmpty()
      */
     @Override
@@ -46,6 +55,8 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
         return super.isEmpty();
     }
     /**    (non-Javadoc)
+     * Returns the number of elements in the data structure at the moment that it is called.
+     * @return size of the data structure
      * @see Traversable_Iter#getSize()
      */
     @Override
@@ -53,6 +64,9 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
         return this.size(); 
     }
     /**    (non-Javadoc)
+     * Iterates through the data structure and replaces a value any time it is found
+     * @param oldValue value to be replaces
+     * @param newValue value to replace oldValue with
      * @see Traversable_Iter#alterEl(java.lang.Object, java.lang.Object)
      */
     @Override 
@@ -66,6 +80,7 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
         }
     }
     /**    (non-Javadoc)
+     * Prints all elements in the data structure
      * @see Traversable_Iter#printEls()
      */
     @Override 

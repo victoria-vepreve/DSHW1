@@ -1,11 +1,12 @@
+import java.util.*;
 /**
  * Implementation of a generic Deque that implements Deque_Iter and extends ArrayList
  * Inheriting from ArrayList allows me to use ArrayList's methods without having to write them myself.
  */
-import java.util.*;
+
 public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
     /**
-     * Implementation of a generic Queue that implements Queue_Iter and extends ArrayList
+     * Implementation of a generic Deque that implements Deque_Iter and extends ArrayList
      * Inheriting from ArrayList allows me to use ArrayList's methods without having to write them myself.
      */
     protected Deque() {
@@ -46,6 +47,8 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
         return x;
     }
     /**    (non-Javadoc)
+     * Checks if the data structure is empty.
+     * @return true if it is empty, false if it is not.
      * @see java.util.ArrayList#isEmpty()
      */
     @Override
@@ -56,6 +59,8 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
         return super.isEmpty();
     }
     /**    (non-Javadoc)
+     * Returns the number of elements in the data structure at the moment that it is called.
+     * @return size of the data structure
      * @see Traversable_Iter#getSize()
      */
     @Override
@@ -63,6 +68,9 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
         return this.size(); 
     }
     /**    (non-Javadoc)
+     * Iterates through the data structure and replaces a value any time it is found
+     * @param oldValue value to be replaces
+     * @param newValue value to replace oldValue with
      * @see Traversable_Iter#alterEl(java.lang.Object, java.lang.Object)
      */
     @Override 
@@ -76,6 +84,7 @@ public class Deque<E> extends ArrayList< E> implements Deque_Iter<E> {
         }
     }
     /**    (non-Javadoc)
+     * Prints all elements in the data structure
      * @see Traversable_Iter#printEls()
      */
     @Override 

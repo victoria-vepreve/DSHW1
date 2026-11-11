@@ -1,8 +1,9 @@
+import java.util.*;
 /**
  * Implementation of a generic Stack that implements Stack_Iter and extends ArrayList
  * Inheriting from ArrayList allows me to use ArrayList's methods without having to write them myself
  */
-import java.util.*;
+
 public class Stack<E> extends ArrayList<E> implements Stack_Iter<E> {
     /**
     * Calls ArrayList constructor to construct an empty ArrayList to hold the Stack like how it is done in the default Java Stack.
@@ -42,6 +43,8 @@ public class Stack<E> extends ArrayList<E> implements Stack_Iter<E> {
         return this.get(this.size()-1);
     }
     /**    (non-Javadoc)
+     * Checks whether the stack is empty
+     * @return true if there are no elements, false otherwise
      * @see java.util.ArrayList#isEmpty()
      */
     @Override
@@ -52,6 +55,8 @@ public class Stack<E> extends ArrayList<E> implements Stack_Iter<E> {
         return super.isEmpty();
     }
     /**    (non-Javadoc)
+     * Gets the number of elements in the stack.
+     * @return the integer size of the stack
      * @see Traversable_Iter#getSize()
      */
     @Override
@@ -59,6 +64,9 @@ public class Stack<E> extends ArrayList<E> implements Stack_Iter<E> {
         return this.size(); 
     }
     /**    (non-Javadoc)
+     * Iterates through the data structure and replaces a value any time it is found
+     * @param oldValue value to be replaces
+     * @param newValue value to replace oldValue with
      * @see Traversable_Iter#alterEl(java.lang.Object, java.lang.Object)
      */
     @Override 
@@ -72,6 +80,7 @@ public class Stack<E> extends ArrayList<E> implements Stack_Iter<E> {
         }
     }
     /**    (non-Javadoc)
+     * Prints all elements in the data structure
      * @see Traversable_Iter#printEls()
      */
     @Override 

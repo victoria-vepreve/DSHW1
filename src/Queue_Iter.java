@@ -5,7 +5,7 @@
  */
 public interface Queue_Iter<E> extends Traversable_Iter<E>{
     /**
-     * Adds an element to the back of the queu
+     * Adds an element to the back of the queue
      * @param element element that will be added to the queue
      */
     void enqueue(E element);
