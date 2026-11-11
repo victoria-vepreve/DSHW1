@@ -4,6 +4,7 @@ public class Queue<E> extends ArrayList<E> implements Queue_Iter<E> {
      * 
      */
     protected Queue() {
+        super();
     }
     @Override 
     public void enqueue(E element) {
